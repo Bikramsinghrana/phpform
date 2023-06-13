@@ -27,7 +27,7 @@
         $result = mysqli_query($conn,$sql);            
         if($result){
                 echo " successfully adda" ;
-                header("Location: /phpprogram/Task/appi.html");
+                header("Location: /appi.html");
             } 
          
         else {
