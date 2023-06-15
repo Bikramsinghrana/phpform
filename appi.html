@@ -3,35 +3,47 @@
 
 <head>
     <title>Employee CRUD</title>
-    <link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" href="/phpprogram/Task/form.css">
     <style>
-    *{ background: aqua;
-        text-align: center;
-    
-    }
-  
+        * {
+            background: aqua;
+            text-align: center;
+        }
     </style>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function validateForm() {
+          
+            var mobile_num = document.getElementById("mobile_num").value;
 
-<link rel="stylesheet" href="style.css">
+
+            // Validate phone number
+            if ( mobile_num.length !== 10) {
+                alert("Please enter a valid 10-digit phone number");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
 </head>
 
 <body>
     <h1>Employee CRUD Application</h1>
 
-
-    <div id="main" >
+    <div id="main">
         <h2>Add Employee</h2>
-        <form id="login" action="index1.php" method="post" style=" color:rgb(243, 6, 6) ">
+        <form id="login" action="index1.php" method="post" onsubmit="return validateForm()"
+            style="color: rgb(243, 6, 6)">
             <label for="emp_name">Employee Name:</label>
             <input type="text" name="emp_name" id="emp_name" required><br>
 
             <label for="dept_id">Department:</label>
             <select name="dept_id" id="dept_id">
-                echo "<option value='dept'>dept</option>";
-                echo "<option value='MCA'>MCA </option>";
-                echo "<option value='MBA'>MBA</option>";
-                echo "<option value='BCA'>BCA</option>";
-
+                <option value="dept">Select Department</option>
+                <option value="MCA">MCA</option>
+                <option value="MBA">MBA</option>
+                <option value="BCA">BCA</option>
             </select><br>
 
             <label for="dob">Date of Birth:</label>
@@ -43,16 +55,12 @@
             <label for="email_id">Email ID:</label>
             <input type="email" name="email_id" id="email_id" required><br>
 
-            <!-- <label for="mobile_num">Phone Number:</label>
-            <input type="number" id="mobile_num" name="mobile_num" pattern="[0-9]{10}"  minlength="10" maxlength="10" placeholder="Enter a 10-digit number" required> -->
-
             <label for="mobile_num">Phone Number:</label>
-            <input type="number" name="mobile_num" id="mobile_num" minlength="10" maxlength="10" placeholder="Enter a 10-digit number" required>
+            <input type="number" name="mobile_num" id="mobile_num" minlength="10" maxlength="10"
+                placeholder="Enter a 10-digit number" required>
 
             <input type="submit" class="submit-btn" name="login">
         </form>
-
-
     </div>
 
 </body>
