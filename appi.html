@@ -3,7 +3,7 @@
 
 <head>
     <title>Employee CRUD</title>
-    <link rel="stylesheet" href="/phpprogram/Task/form.css">
+    <link rel="stylesheet"/form.css">
     <style>
         * {
             background: aqua;
@@ -13,10 +13,11 @@
     <link rel="stylesheet" href="style.css">
     <script>
         function validateForm() {
-          
+            
+            
             var mobile_num = document.getElementById("mobile_num").value;
-
-
+            
+            
             // Validate phone number
             if ( mobile_num.length !== 10) {
                 alert("Please enter a valid 10-digit phone number");
@@ -40,8 +41,8 @@
 
             <label for="dept_id">Department:</label>
             <select name="dept_id" id="dept_id">
-                <option value="dept">Select Department</option>
-                <option value="MCA">MCA</option>
+                <option value="MCA">Select Department</option>
+                
                 <option value="MBA">MBA</option>
                 <option value="BCA">BCA</option>
             </select><br>
@@ -59,7 +60,7 @@
             <input type="number" name="mobile_num" id="mobile_num" minlength="10" maxlength="10"
                 placeholder="Enter a 10-digit number" required>
 
-            <input type="submit" class="submit-btn" name="login">
+            <input type="submit" id="submit-btn" name="login">
         </form>
     </div>
 
